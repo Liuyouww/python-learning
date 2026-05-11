@@ -1,0 +1,10 @@
+Day 1:
+python环境安装：网站：python.org;勾选“Add python to PATH”;自定义安装;disable path length limit;命令行输入python验证安装完成
+git安装
+开发工具——pycharm
+
+输入：input.  a=input("提示词")  a为str
+输出：print("")   输出变量值：print(f"{变量名}")
+运算：//整除，%取余，**幂指数，and/or/not
+
+快捷键：ctrl+d 快速复制一行
