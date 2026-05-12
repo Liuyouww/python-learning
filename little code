@@ -24,3 +24,24 @@ while True:
         break
     print("用户名或密码不对，请重新输入！")
 
+
+# 猜数字游戏
+# 1.系统随机生成一个随机数
+# 2.用户根据提示猜数字，并将所猜的数字输入系统
+# 3.如果猜错，系统给出提示是猜大了，还是猜小了，然后继续输入猜的数字
+# 4.如果猜对，系统自动退出，游戏结束
+
+import random
+
+num=random.randint(1,100)
+
+while True:
+    guess_num=int(input("输入猜的数字："))
+
+    if guess_num==num:
+        print("恭喜猜对了！")
+        break
+    elif guess_num>num:
+        print("猜大了，请继续猜")
+    elif guess_num<num:
+        print("猜小了，请继续猜")
