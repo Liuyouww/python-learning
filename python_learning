@@ -18,3 +18,14 @@ while————while 条件:循环体  else: ……
 嵌套循环————外循环+内循环
 
 随机数random————import random; random.randint(strat,end)[包含start和end]
+
+组包：将多个元素合并至列表/元组内；
+解包：将列表/元组内元素拆解赋值给多个变量      a,b,c,d=(5,10,8,9)/a,*b,c=(5,10,8,9)[b=[10,8]列表]
+
+数据容器:（方法：s.方法名）sum()  len()  '' in s  type(s)查看数据类型  
+  列表list  s=[可重复、无序、可修改、存放多类]  [del] s[i/-i] s[start:end:[step负数从后往前]]不包含end   列表合并:s1+s2
+          方法：append(x)尾部插入,insert(index,x)索引前插入元素,remove(x)删除第一个匹配的元素,pop(index)删除对应索引元素[未指定-删除最后一个],sort()同类数据排序,reverse()反转
+  字符串str  s="不可变"   方法：find()找子串位置,count()统计字符次数,upper/lower()转换大小写,split('分隔符')按分隔符分割成列表,strip()去除两端空白或指定字符,replace('子串1','子串2')替换子串,startswith/endswith()是否以子串开头/结尾
+  元组tuple  s=(存放多类、不可修改)  count()统计元素数量,index()找元素位置  定义：s=()/(100,)[单个元素加',']
+  
+  
