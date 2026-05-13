@@ -45,3 +45,106 @@ while True:
         print("猜大了，请继续猜")
     elif guess_num<num:
         print("猜小了，请继续猜")
+
+# 开发一个购物车管理系统,实现商品信息的添加、修改、删除、查询功能。系统使用字典结构存储商品数据,
+# 通过控制台菜单与用户交互。具体功能如下:
+# 1. 添加购物车:用户根据提示录入商品名称、以及该商品的价格、数量,保存该商品信息到购物车。
+# 2. 修改购物车:要求用户输入要修改的购物车商品名称,然后再提示输入该商品的价格、数量,输入完成后修改该商品信息。
+# 3. 删除购物车:要求用户输入要删除的购物车名称,根据名称删除购物车中的商品。
+# 4. 查询购物车:将购物车中的商品信息展示出来,格式为:“商品名称:xxx,商品价格:xxx,商品数量:xxx"。
+# 5. 退出购物车
+
+shopping_car={}
+
+print("欢迎来到购物车管理系统~")
+menu="""
+############################
+#        1.添加购物车        #
+#        2.修改购物车        #
+#        3.删除购物车        #
+#        4.查询购物车        #
+#        5.退出购物车        #
+############################
+"""
+
+while True:
+    print(menu)
+    choice=input("请选择要实现的功能(1-5)：")
+    match choice:
+        case "1":  #添加购物车
+            while True:
+                add_input=input("请输入要添加的商品名称、价格以及数量(以空格分隔)，如苹果 5 3：")
+                goods_name,goods_price,goods_num=add_input.strip().split(" ")
+                if goods_name in shopping_car:
+                    print("商品已在购物车中，无需重复添加。")
+                else:
+                    shopping_car[goods_name]={"price":goods_price,"num":goods_num}
+                    print(f"商品“{goods_name}”已添加完成。")
+                subchoice = input("是否需要继续添加？(y/n) ")
+                if subchoice == "y" or subchoice == "Y":
+                    continue
+                if subchoice == "n" or subchoice == "N":
+                    break
+        case "2":  #修改购物车
+            while True:
+                modify_name=input("请输入要修改的商品名称：")
+                if modify_name not in shopping_car:
+                    print("商品不在购物车中，无法修改。")
+                else:
+                    modify=input("您需要修改商品的价格还是数量(0价格，1数量，2价格和数量)？")
+                    if modify=="0":
+                        modify_price=int(input("请输入您想要修改的价格："))
+                        old_price=shopping_car[modify_name]["price"]
+                        shopping_car[modify_name]["price"]=modify_price
+                        temp_price=shopping_car[modify_name]["price"]
+                        print(f"修改成功，商品“{modify_name}”修改后的信息为：价格：{temp_price}(价格从{old_price}改为{temp_price})，数量：{shopping_car[modify_name]["num"]}")
+                    elif modify=="1":
+                        modify_num=int(input("请输入您想要修改的数量："))
+                        old_num=shopping_car[modify_name]["num"]
+                        shopping_car[modify_name]["num"]=modify_num
+                        temp_num=shopping_car[modify_name]["num"]
+                        print(f"修改成功，商品“{modify_name}”修改后的信息为：价格：{shopping_car[modify_name]["num"]}，数量：{temp_num}(数量从{old_num}改为{temp_num})")
+                    elif modify=="2":
+                        modify_price,modify_num=input("请输入您想要修改的价格和数量(用空格分隔开)：").strip().split(" ")
+                        old_price = shopping_car[modify_name]["price"]
+                        old_num=shopping_car[modify_name]["num"]
+                        shopping_car[modify_name]["price"] = modify_price
+                        shopping_car[modify_name]["num"]=modify_num
+                        temp_price = shopping_car[modify_name]["price"]
+                        temp_num=shopping_car[modify_name]["num"]
+                        print(f"修改成功，商品“{modify_name}”修改后的信息为：价格：{temp_price}(价格从{old_price}改为{temp_price})，数量：{temp_num}(数量从{old_num}改为{temp_num})")
+                subchoice = input("是否需要继续修改？(y/n) ")
+                if subchoice == "y" or subchoice == "Y":
+                    continue
+                if subchoice == "n" or subchoice == "N":
+                    break
+        case "3":  #删除购物车
+            while True:
+                delete_name=input("请输入要删除的商品名称：")
+                if delete_name not in shopping_car:
+                    print("商品不在购物车中，删除失败。")
+                else:
+                    temp_price = shopping_car[delete_name]["price"]
+                    temp_num = shopping_car[delete_name]["num"]
+                    print(f"您要删除的商品信息为：{delete_name},价格：{temp_price}，数量：{temp_num}")
+                    subsubchoice=input("是否确定删除(y/n)？ ")
+                    if subsubchoice == "y" or subsubchoice == "Y":
+                        del shopping_car[delete_name]
+                        print("删除成功！")
+                    elif subsubchoice == "n" or subsubchoice == "N":
+                        print("撤销删除指令")
+                subchoice = input("是否需要继续删除？(y/n) ")
+                if subchoice == "y" or subchoice == "Y":
+                    continue
+                if subchoice == "n" or subchoice == "N":
+                    break
+        case "4":  #查询购物车
+            print("商品名称 \t价格\t数量")
+            for i in shopping_car.keys():
+                print(f"{i}  \t{shopping_car[i]["price"]}  \t{shopping_car[i]['num']}")
+        case "5":  #退出购物车
+            print("再见~")
+            break
+        case _:
+            print("非法输入，请重新输入。")
+
