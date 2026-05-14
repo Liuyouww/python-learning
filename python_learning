@@ -30,4 +30,13 @@ while————while 条件:循环体  else: ……
 Day 3:
   集合set  s={无序(不可用索引)，不重复，可修改}  定义:set()   方法:add(x),remove(x),a=s.pop()[随机删除元素并返回],clear()清空,s1.difference(s2)[s1与s2的差集(在s1不在s2)='-'],union()并集[='|'],intersection交集[='&']
   字典dict s={key:value(key不重复),可修改,无索引}  定义:{}/dict()  方法:(增/改)dict[key]=value;(删)a=dict.pop[key],del dict[key];(查)value--dict[key]/dict.get(key);所有key/value/键值对--dict.keys()/values()/items()
-,
+Day 4:
+  函数: def 函数名(参数):函数体(return 返回值)   """函数说明文档：功能、参数、返回值"""--help(函数名)可以查看文档   不定长参数:*args   匿名函数:num=lambda x,y:x+y
+  保留小数:round(x,num)[num表示保留几位小数]
+  文件读写:   睡眠延时:time.sleep(num单位:秒)
+      打开文件:f=open(name[r'电脑原路径'],mode['r'只读,'w'写入,'a'追加(w和a可以创建新文件)],encoding="UTF-8")  
+      读取文件:f.read([num]读取长度,默认读取全部长度);f.readlines()整个文件按行进行读取，输出列表，一行一元素;readline()一次读取一行，下次读取接在上次读取位置之后;for line in f:得到每行数据
+      写入/追加写入文件:f.write(内容)→f.flush()  追加写入：'\n'换行
+      关闭文件:f.close()[带有flush功能]
+      打开文件后自动关闭: with open(name,mode,encoding) as f: 文件操作
+  异常捕获: try:可能异常的代码 except [error名称,多个(eroor1,error2)] [as e]:触发异常之后代码 [else:没有异常时的代码] [finally:有无异常都执行的代码] [Exception表示全部异常]
