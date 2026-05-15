@@ -40,3 +40,8 @@ Day 4:
       关闭文件:f.close()[带有flush功能]
       打开文件后自动关闭: with open(name,mode,encoding) as f: 文件操作
   异常捕获: try:可能异常的代码 except [error名称,多个(eroor1,error2)] [as e]:触发异常之后代码 [else:没有异常时的代码] [finally:有无异常都执行的代码] [Exception表示全部异常]
+Day 5:
+  类: class 类名:  def __init__/方法名(self,形参列表):self.属性名=参数值  ;c=类名()  c.方法名()
+  大语言模型(LLM):
+      部署:本地/官方开放API(Application Programming Interface应用程序编程接口)/云服务平台
+        本地部署:Ollama软件(ollama run 模型名称)
