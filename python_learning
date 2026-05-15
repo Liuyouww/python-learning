@@ -44,4 +44,5 @@ Day 5:
   类: class 类名:  def __init__/方法名(self,形参列表):self.属性名=参数值  ;c=类名()  c.方法名()
   大语言模型(LLM):
       部署:本地/官方开放API(Application Programming Interface应用程序编程接口)/云服务平台
-        本地部署:Ollama软件(ollama run 模型名称)
+        本地部署:Ollama软件(ollama run 模型名称[在ollama的models去搜索])     API--API Key
+  网络:IP地址定位设备(一般IPv4,32位二进制),127.0.0.1本机IP地址；domain name域名--DNS域名解析服务器；port端口号0-65535,标识运行程序[http协议默认端口80，https协议默认端443]
