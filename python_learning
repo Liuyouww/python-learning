@@ -45,6 +45,15 @@ Day 5:
   大语言模型(LLM):
       部署:本地/官方开放API(Application Programming Interface应用程序编程接口)/云服务平台
         本地部署:Ollama软件(ollama run 模型名称[在ollama的models去搜索])     API--API Key
-  网络:IP地址定位设备(一般IPv4,32位二进制),127.0.0.1本机IP地址；domain name域名--DNS域名解析服务器；port端口号0-65535,标识运行程序[http协议默认端口80，https协议默认端443]
+  网络:IP地址定位设备(一般IPv4,32位二进制),127.0.0.1本机IP地址(localhost)；domain name域名--DNS域名解析服务器；port端口号0-65535,标识运行程序[http协议默认端口80，https协议默认端443]
   网络模型:OSI七层模型(应用-表示-会话-传输-网络-数据链路-物理),TCP/IP四层模型(应用层HTTP,FTP,SMTP-传输层UDP,TCP-网络层IP-网络接口层)
   HTTP-Hyper Text Transfer Protocol超文本传输协议[基于文本,请求-响应,无记忆]  http请求/响应数据格式--见备忘录“http格式”  [浏览器开发程序-F12]
+Day 6:
+  大模型调用--POST(不能用浏览器)--Apifox(API设计、开发、测试一体化平台)--会话需要记忆上下文(滚雪球--将前面对话也全部写上)
+  大模型官方网站--API key创建后--官方文档--python调用
+  提示词工程:大模型角色和能力、任务、拆解问题（思考步骤）、指定风格、输出格式、输入输出示例
+  JSON(JavaScript Object Notation)对象表示方法，类似“字典”  {"key"字符串:value不限类型}
+  PyPI(Python Package Index)python第三方软件包仓库[pip/pip3 install package_name=版本号]
+  配置环境变量:设置-系统-高级系统设置-环境变量[配置完成后重启开发工具]
+  Streamlit:开源python库，用于快速构建交互web网站[pip install streamlit-import streamlit as st-st.方法名()-streamlit run x.py]
+    标题:st.title(body)-st.header-st.subheader
