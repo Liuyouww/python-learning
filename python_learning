@@ -34,17 +34,17 @@ Day 4:
   函数: def 函数名(参数):函数体(return 返回值)   """函数说明文档：功能、参数、返回值"""--help(函数名)可以查看文档   不定长参数:*args   匿名函数:num=lambda x,y:x+y
   保留小数:round(x,num)[num表示保留几位小数]
   文件读写:   睡眠延时:time.sleep(num单位:秒)
-      打开文件:f=open(name[r'电脑原路径'],mode['r'只读,'w'写入,'a'追加(w和a可以创建新文件)],encoding="UTF-8")  
-      读取文件:f.read([num]读取长度,默认读取全部长度);f.readlines()整个文件按行进行读取，输出列表，一行一元素;readline()一次读取一行，下次读取接在上次读取位置之后;for line in f:得到每行数据
-      写入/追加写入文件:f.write(内容)→f.flush()  追加写入：'\n'换行
-      关闭文件:f.close()[带有flush功能]
-      打开文件后自动关闭: with open(name,mode,encoding) as f: 文件操作
+    打开文件:f=open(name[r'电脑原路径'],mode['r'只读,'w'写入,'a'追加(w和a可以创建新文件)],encoding="UTF-8")  
+    读取文件:f.read([num]读取长度,默认读取全部长度);f.readlines()整个文件按行进行读取，输出列表，一行一元素;readline()一次读取一行，下次读取接在上次读取位置之后;for line in f:得到每行数据
+    写入/追加写入文件:f.write(内容)→f.flush()  追加写入：'\n'换行
+    关闭文件:f.close()[带有flush功能]
+    打开文件后自动关闭: with open(name,mode,encoding) as f: 文件操作
   异常捕获: try:可能异常的代码 except [error名称,多个(eroor1,error2)] [as e]:触发异常之后代码 [else:没有异常时的代码] [finally:有无异常都执行的代码] [Exception表示全部异常]
 Day 5:
   类: class 类名:  def __init__/方法名(self,形参列表):self.属性名=参数值  ;c=类名()  c.方法名()
   大语言模型(LLM):
-      部署:本地/官方开放API(Application Programming Interface应用程序编程接口)/云服务平台
-        本地部署:Ollama软件(ollama run 模型名称[在ollama的models去搜索])     API--API Key
+    部署:本地/官方开放API(Application Programming Interface应用程序编程接口)/云服务平台
+      本地部署:Ollama软件(ollama run 模型名称[在ollama的models去搜索])     API--API Key
   网络:IP地址定位设备(一般IPv4,32位二进制),127.0.0.1本机IP地址(localhost)；domain name域名--DNS域名解析服务器；port端口号0-65535,标识运行程序[http协议默认端口80，https协议默认端443]
   网络模型:OSI七层模型(应用-表示-会话-传输-网络-数据链路-物理),TCP/IP四层模型(应用层HTTP,FTP,SMTP-传输层UDP,TCP-网络层IP-网络接口层)
   HTTP-Hyper Text Transfer Protocol超文本传输协议[基于文本,请求-响应,无记忆]  http请求/响应数据格式--见备忘录“http格式”  [浏览器开发程序-F12]
@@ -63,4 +63,8 @@ Day 6:
     数据过滤：df[df['col_name'>10]]/df[df['col_name'].isin(['choice1','choice2'])]/df[df['col_name'].between(num1,num2)]/&与/|或
     数据清洗(缺失值、异常值、重复值、统一数据格式)：
       缺失值：df.isnull()查看缺失/dropna()删除缺失值所在行[axis=1删除所在列]/fillna('--')填充缺失值/ffill()用上一行填充缺失值[bfill用下一行]
-      重复值：df.duplicated()查看所有值都重复的[重复为True]/duplicated(subset=['col_name'])查看选定列是否重复/
+      重复值：df.duplicated()查看所有值都重复的[重复为True]/duplicated(subset=['col_name'])查看选定列是否重复/drop_duplicates(subset=['col_name'],keep='first'/'last'/False)删除重复行(保留第一行/最后一行/都不保留)
+      异常值：df[条件式:df[]<0]查看异常值/df.drop(df[df[]<0].index)删除异常值/abs
+      数据格式：df.replace/df.str.replace
+    数据排序：df.sort_values('col_name'/['col_name1','col_name2'],ascending=True升序/False降序/[True,True])
+    数据分组：df.groupby('分组特征')['销售额'].sum()/count()/max()/min()/mean()/agg(['sum','count'……])/agg({'销售总额':'sum',……})
