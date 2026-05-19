@@ -57,4 +57,10 @@ Day 6:
   配置环境变量:设置-系统-高级系统设置-环境变量[配置完成后重启开发工具]
   Streamlit:开源python库，用于快速构建交互web网站[pip install streamlit-import streamlit as st-st.方法名()-[终端]streamlit run x.py]
     [官方文档]标题:st.title(body)-st.header-st.subheader   段落文字:st.write("文字")
-  pandas数据分析工具集(底层numpy构建):pd.DataFrame,Series(index,)
+  pandas数据分析工具集(底层numpy构建):    设置显示行数pd.set_option('display.min_rows',30)
+    数据读取：pd.DataFrame,Series(index,columns,values,dtypes,size,shape)   df=pd.read_xxx(文件类型)('文件路径',限制读取列usecols=[])  df.to_csv('文件路径',index=False)
+    数据查看：df.head(n)前几行数据/tail(n)末尾几行数据/describe()数值统计/info()数据信息/shape/columns  数据选择：df['col_name1','col_name2']/df.iloc[start:end:step不含end]按行号选择行(loc按照索引选择行)
+    数据过滤：df[df['col_name'>10]]/df[df['col_name'].isin(['choice1','choice2'])]/df[df['col_name'].between(num1,num2)]/&与/|或
+    数据清洗(缺失值、异常值、重复值、统一数据格式)：
+      缺失值：df.isnull()查看缺失/dropna()删除缺失值所在行[axis=1删除所在列]/fillna('--')填充缺失值/ffill()用上一行填充缺失值[bfill用下一行]
+      重复值：df.duplicated()查看所有值都重复的[重复为True]/duplicated(subset=['col_name'])查看选定列是否重复/
