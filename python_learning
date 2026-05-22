@@ -72,4 +72,4 @@ Day 7: streamlit页面布局：st.set_page_config(page_title=''网页上名称,p
     类似ai界面对话窗口:prompt=st.chat_input("提示词")，展示消息st.chat_message('user/assistant').write(prompt)     消息不覆盖，实现滚动(内存，刷新后无):st.session_state.name保存之前状态，在每次重置后保留显示
     AI对话记忆能力:(滚雪球)直接使用*st.session_state.name[解包]  流式输出:stream=True,并且原先输出不适用(response.choices[0].message.content),
 改为遍历：[流式输出](占位)response_message=st.empty() [流式接收]full_response=''  for chunk in response:  if chunk.choice[0].delta.content is not None: content = chunk.choice[0].delta.content  full_response+=content response_message.chat_message('assistant').write(full_response)
-    侧边栏:
+    侧边栏:st.sidebar.[element_name]/with st.sidebar: st.element_name
