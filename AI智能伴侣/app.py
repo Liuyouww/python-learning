@@ -3,7 +3,7 @@ from datetime import datetime
 
 from session_utils import (
     save_session,
-    get_sessions_list,zhi
+    get_sessions_list,
     load_session,
     delete_session,
     rename_session
