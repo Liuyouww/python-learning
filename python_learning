@@ -80,3 +80,4 @@ json文件(import json)：写入(序列化)son.dump(obj,f,ensure_ascii=False[保
 创建文件夹：if not os.path.exists('sessions'): os.mkdir('sessions')
     会话:
       新建会话：保存当前会话，创建新会话并保存[永久保存至磁盘]--保存:伴侣名字nick_name、性格nature、会话信息messages、会话名字current_session[json格式]
+          os.listdir()列表输出文件夹内文件, 并列按键：col1,col2=st.columns(x平均分为x列/[x,y]两列占比为x:y)  同样label组件无法重复创建--+key=f'delete_{session}'
