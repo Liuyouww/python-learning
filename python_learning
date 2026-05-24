@@ -82,3 +82,6 @@ json文件(import json)：写入(序列化)son.dump(obj,f,ensure_ascii=False[保
       新建会话--保存当前会话，创建新会话并保存[永久保存至磁盘]--保存:伴侣名字nick_name、性格nature、会话信息messages、会话名字current_session[json格式]
       os.listdir()列表输出文件夹内文件, 并列按键：col1,col2=st.columns(x平均分为x列/[x,y]两列占比为x:y)  同样label组件无法重复创建--+key=f'delete_{session}'
       按键高亮：+type='primary'/'secondary'/'tertiary'     三元表达式：表达式1 if 条件 else 表达式2
+Day 8:
+  爬虫：网络机器人，按照规则自动浏览并抓取网络数据的程序或脚本  （合规性）robots协议[robots.txt]（哪些页面不可以抓取）  发送HTTP请求[requests库]-解析结果提取数据-数据清洗（标准化）-数据存储    
+  
