@@ -84,4 +84,7 @@ json文件(import json)：写入(序列化)son.dump(obj,f,ensure_ascii=False[保
       按键高亮：+type='primary'/'secondary'/'tertiary'     三元表达式：表达式1 if 条件 else 表达式2
 Day 8:
   爬虫：网络机器人，按照规则自动浏览并抓取网络数据的程序或脚本  （合规性）robots协议[robots.txt]（哪些页面不可以抓取）  发送HTTP请求[requests库]-解析结果提取数据-数据清洗（标准化）-数据存储    
+  浏览器的url发送请求--response=requests.get(url)    超文本：除了文字，还可以定义图片、音频、视频等内容  F12网页开发者模式  CSV(Comma-Separated Values逗号分隔值),存储表格数据,可直接用excel打开[系统默认中文编码，cmd-chcp-936-GBK/ANSI]
+  前端网页结构：HTML+CSS+JS(JavaScript)   标记语言：<>开始标签 </>结束标签 <a key='value'表示标签属性>  HTML(HyperTextMarkupLanguage)超文本标记语言,<h1>一级标题</h1>,负责网页结构(页面元素和内容)  CSS(CascadingStyleSheets)层叠样式表,负责网页表现(外观、位置、颜色大小)<style>  JS负责网页行为(交互效果)<script>
+  网页解析：从标签中提取数据--lxml库(HTML/XML解析库,支持基于Xpath语法来解析和获取数据)[from lxml import html]  doc=html.fromstring()解析html为文档 list=doc.xpath('//x/y[1]/text()')输出为列表（./当前节点，[last()]选择最后一个元素，[@attr]有该属性元素，*任何元素）
   
