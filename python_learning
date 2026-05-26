@@ -7,7 +7,7 @@ git安装
 输出：print("")   输出变量值：print(f"{变量名}")  默认自带回车(回车→print())，无回车end=""(对齐用制表符"\t")
 运算：//整除，%取余，**幂指数，and/or/not
 
-快捷键：ctrl+d 快速复制一行   alt+shift+鼠标拖动 列编辑模式
+快捷键：ctrl+d 快速复制一行   alt+shift+鼠标拖动 列编辑模式  未定义方法alt+enter创建方法
 
 Day 2:
 if————if 条件: ……elif 条件: ……else: ……
@@ -88,4 +88,6 @@ Day 8:
   前端网页结构：HTML+CSS+JS(JavaScript)   标记语言：<>开始标签 </>结束标签 <a key='value'表示标签属性>  HTML(HyperTextMarkupLanguage)超文本标记语言,<h1>一级标题</h1>,负责网页结构(页面元素和内容)  CSS(CascadingStyleSheets)层叠样式表,负责网页表现(外观、位置、颜色大小)<style>  JS负责网页行为(交互效果)<script>
   网页解析：从标签中提取数据--lxml库(HTML/XML解析库,支持基于Xpath语法来解析和获取数据)[from lxml import html]  doc=html.fromstring()解析html为文档 list=doc.xpath('//x/y[1]/text()')输出为列表（./当前节点，[last()]选择最后一个元素，[@attr]有该属性元素，*任何元素）
   python写csv文件(字典)：import csv  with open('w',newline=''控制换行) as f: writer=csv.DictWriter(f,[,,]) writer.writeheader()写入表头 writer.writerow({'':'',})   读：reader=csv.DictReader()
-  
+Day 9:
+  访问国外网站，担心延迟--+timeout=60  列表中多元素输出以','分隔--','.join(list)
+  正则表达式(Regular Expression)  import re--re.match(r'',s).group()从开头匹配(返回match对象)，re.search(r'',s).group()从任意位置搜索第一个匹配(返回match对象)，re.findall(r'',s)从任意位置搜索所有匹配(返回list)  符号语法见备忘录“正则表达式语法”
