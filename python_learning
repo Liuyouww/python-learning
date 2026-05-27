@@ -93,8 +93,10 @@ Day 9:
   正则表达式(Regular Expression)  import re--re.match(r'',s).group()从开头匹配(返回match对象)，re.search(r'',s).group()从任意位置搜索第一个匹配(返回match对象)，re.findall(r'',s)从任意位置搜索所有匹配(返回list)  符号语法见备忘录“正则表达式语法”
   数据分析：数据收集-数据清洗(pandas)-数据分析-数据可视化(matplotlib.pyplot)  Jupyter Notebook(交互环境,独立运行每一小块，运行结果保存)
   matplotlib.pyplot(plt):  plt.figure(figsize=(10,5))设置画布大小  plt.plot(x,y,label='')创建画布(多折线图，多个plot) 最后要有：plt.show() plt.title(''展示中文代码,fontsize=字体大小)标题  plt.xlabel/ylabel()x/y轴标题  plt.xticks()x轴刻度  plt.grid('linestyle线条样式','alpha透明度')网格线  plt.legend(loc='位置',ncol=列数,位置bbox_to_anchor=(x方向,y方向))图例
-  子图:figure画布对象,axes索引=plt.subplots(nrows=1行数,ncols=2列数,figsize=(20,6)画布大小,dpi=100分辨率)  整个标题：figure.suptitle()   [axes1:Axes=axes[0]]  axes1.set_title/set_xlabel/grid/legend   柱状图axes[0].bar(x,y,color='',width=)  饼状图axes[0].pie(value,labels=[],autopct='1.1f%%')  plt.savefig('')
+  子图:figure画布对象,axes索引=plt.subplots(nrows=1行数,ncols=2列数,figsize=(20,6)画布大小,dpi=100分辨率)  整个标题：figure.suptitle()   [axes1:Axes=axes[0]]表示axes1属于Axes类  axes1.set_title/set_xlabel/grid/legend   柱状图axes[0].bar(x,y,color='',width=)  饼状图axes[0].pie(value,labels=[],autopct='1.1f%%')  plt.savefig('')
   int64整型数字，不支持空值;Int64整型数字，支持空值(dtype)
 Day 10:
 Web应用：
   面向对象高级（封装、继承、多态）：封装:数据(属性)+函数(方法)捆绑成一个独立的单元(类),隐藏内部实现细节,只对外暴露必要的功能(方法). [约定内部调用]私有属性/方法(+下划线):self.__owner=owner def __control(self):  
+  继承:类与类之间关系  class 子类(父类1,父类2)[不含私有] 子类中可重写父类方法（调用父类:父类名.方法()/super().方法()） 类名.mro()查看多继承调用顺序
+  多态:[同一方法不同表现形态]方法参数类型为父类(car:Car)，支持调用任意子类--类型注解并不强制类型，主要关注方法
