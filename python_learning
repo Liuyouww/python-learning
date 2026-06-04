@@ -103,5 +103,5 @@ Web应用：
   抽象类：只能被继承，不能被实例化的类class Member(ABC)（使用@abstractmethod,强制子类必须实现指定方法）from abc import ABC,abstractmethod(Abstract Base Class)
   FastAPI:
   Web:全球广域网,也称万维网(www World Wide Web),能够通过浏览器访问到的网站---前端程序(界面展示HTML+CSS+JS)+服务器程序(业务逻辑处理Django、Flask、FastAPI)+数据库(数据存储和管理)
-  FastAPI(https://fastapi.org.cn):from fastapi import FastAPI  app=FastAPI()  定义功能接口：@app.get('/'访问路径) def root():   运行FastAPI服务：1.fastapi dev "xx.py" 2.(服务器)uvicorn xx:app --relolad（或import uvicorn  uvicorn.run(app,host='0.0.0.0',port=8000)）
+  FastAPI(https://fastapi.org.cn):from fastapi import FastAPI  app=FastAPI()  定义功能接口：@app.get('/'访问路径) def root(): return  运行FastAPI服务：1.fastapi dev "xx.py" 2.(服务器)uvicorn xx:app --relolad（或import uvicorn  uvicorn.run(app,host='0.0.0.0',port=8000)）
 
