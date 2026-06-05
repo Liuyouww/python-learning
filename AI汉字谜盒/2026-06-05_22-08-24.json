@@ -1,0 +1,45 @@
+{
+  "current_session": "2026-06-05_22-08-24",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "你好！来猜个字谜吧：一人在内（打一字）"
+    },
+    {
+      "role": "user",
+      "content": "肉"
+    },
+    {
+      "role": "assistant",
+      "content": "太棒了！就是“肉”字！要不要再来一题？"
+    },
+    {
+      "role": "user",
+      "content": "嗯嗯"
+    },
+    {
+      "role": "assistant",
+      "content": "半真半假（打一字）"
+    },
+    {
+      "role": "user",
+      "content": "提示一下"
+    },
+    {
+      "role": "assistant",
+      "content": "取“真”的一半和“假”的一半组合。"
+    },
+    {
+      "role": "user",
+      "content": "猜不出来"
+    },
+    {
+      "role": "assistant",
+      "content": "谜底是“值”字。取“真”的一半“直”，加上“假”的一半“亻”，合起来就是“值”。要不要再来一题？"
+    }
+  ]
+}
