@@ -108,3 +108,4 @@ Web应用：
   Fileresponse读取文件；挂载静态文件:from fastapi.staticfiles import StaticFiles  app.mount("/static"寻求路径, StaticFiles(directory="static"现有文件路径), name="static")；json固定label--from pydantic import BaseModel  class Apiresponse(BaseModel)继承重写: code:int message:str data:Any # 任意类型数据
   记录日志：
   logging模块：import logging   logging.basicConfig(level=logging.DEBUG/INFO/WARNING/ERROR/FATAL,format='格式')--logging.info('信息')
+  统一异常处理(FastAPI):@app.exception_handler(Exception) def handle_exception(request:Request,exc:Exception):logging.error(f'捕获异常{exc}')  return JSONResponse(content={'code':200,'message':'错误提示语句','data':None})
