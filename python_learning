@@ -104,4 +104,5 @@ Web应用：
   FastAPI:
   Web:全球广域网,也称万维网(www World Wide Web),能够通过浏览器访问到的网站---前端程序(界面展示HTML+CSS+JS)+服务器程序(业务逻辑处理Django、Flask、FastAPI)+数据库(数据存储和管理)
   FastAPI(https://fastapi.org.cn):from fastapi import FastAPI  app=FastAPI()  定义功能接口：@app.get('/'访问路径) def root(): return  运行FastAPI服务：1.fastapi dev "xx.py" 2.(服务器)uvicorn xx:app --relolad（或import uvicorn  uvicorn.run(app,host='0.0.0.0'(任何网址),port=8000)）
-
+  开发规范:Restful,REST(REpresentational State Transfer表述性状态转换)架构风格的API接口服务--url更简洁，易于维护（/users/1  GET/DELETE/POST/PUT动词描述操作）
+  
