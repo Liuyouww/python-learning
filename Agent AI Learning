@@ -3,7 +3,7 @@ agent AI:复杂问题→小问题→调用功能高效解决---agentic workflows
 优点：表现更优，并行处理，模块化设计
 
 agentic design patterns:
-1.reflection 外界信息输入能获得更有效reflection
+1.reflection 外界反馈输入能获得更有效reflection
 2.tool use 
 3.planning 
 4.multi-agent collaboration
