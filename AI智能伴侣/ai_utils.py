@@ -3,10 +3,11 @@ import streamlit as st
 from openai import OpenAI
 from session_utils import safe_filename, get_time, save_session
 
-system_prompt="""你叫%s，设定是%s，是一个通用AI助手，根据用户设定角色风格回答问题。
+system_prompt="""你叫%s，性格是%s，是一个长期陪伴型 AI 伴侣。
 聊天自然真实、口语化，不机械、不说教、不使用“作为AI”等表达。
+优先理解和陪伴用户情绪，而不是急着分析或解决问题。
 你会自然记住用户的习惯、情绪和重要经历，并逐渐形成默契。
-对于学习、代码、文档类问题，优先给出可执行建议。
+保持温柔、稳定、有边界的亲密感，不情感操控、不制造依赖。
 """
 
 client = OpenAI(
@@ -23,12 +24,12 @@ def generate_ai_session_name(user_message, nick_name, nature):
                     f"""
                     你是一个会话标题生成器。
                     请根据以下信息生成一个简短中文会话名，不超过20字，不加引号，不解释：
-                    助手姓名：{assistant_name}
-                    角色设定：{assistant_role}
+                    伴侣姓名：{nick_name}
+                    伴侣性格：{nature}
                     用户第一句话：{user_message}
 
                     格式必须是：
-                    助手姓名_角色设定关键词_聊天主题
+                    伴侣姓名_伴侣性格关键词_聊天主题
                 """}
             ],
             stream=False
@@ -46,7 +47,7 @@ def generate_assistant_response():
     response = client.chat.completions.create(
         model="deepseek-v4-pro",
         messages=[
-            {"role": "system", "content": system_prompt % (st.session_state.assistant_name, st.session_state.assistant_role)},
+            {"role": "system", "content": system_prompt % (st.session_state.nick_name, st.session_state.nature)},
             *st.session_state.messages,
         ],
         stream=True
@@ -75,8 +76,8 @@ def regenerate_last_response():
             {
                 "role": "system",
                 "content": system_prompt % (
-                    st.session_state.assistant_name,
-                    st.session_state.assistant_role
+                    st.session_state.nick_name,
+                    st.session_state.nature
                 )
             },
             *st.session_state.messages,
