@@ -1,0 +1,111 @@
+Day 1:
+python环境安装：网站：python.org;勾选“Add python to PATH”;自定义安装;disable path length limit;命令行输入python验证安装完成
+git安装
+开发工具——pycharm
+
+输入：input.  a=input("提示词")  a为str
+输出：print("")   输出变量值：print(f"{变量名}")  默认自带回车(回车→print())，无回车end=""(对齐用制表符"\t")
+运算：//整除，%取余，**幂指数，and/or/not
+
+快捷键：ctrl+d 快速复制一行   alt+shift+鼠标拖动 列编辑模式  未定义方法alt+enter创建方法
+
+Day 2:
+if————if 条件: ……elif 条件: ……else: ……
+模式匹配match————match 变量名:  case 对应模式: case _:（表示其他情况）
+while————while 条件:循环体  else: ……
+轮询遍历:for循环————for 元素 in ……:循环体 else:……
+生成数字序列range————range(end)[从0开始];range(start,end,[step])[都不包含end]
+嵌套循环————外循环+内循环
+
+随机数random————import random; random.randint(strat,end)[包含start和end]
+
+解包unpacking：将列表/元组内元素拆解赋值给多个变量      a,b,c,d=(5,10,8,9)/a,*b,c=(5,10,8,9)[b=[10,8]列表]/*list
+
+数据容器:（方法：s.方法名）sum()  len()  min/max()  '' in s  type(s)查看数据类型   s={/[i表达式 for i in …… if ……]/}
+  列表list  s=[可重复、可修改、存放多类]  [del] s[i/-i] s[start:end:[step负数从后往前]]不包含end   列表合并:s1+s2
+          方法：append(x)尾部插入,insert(index,x)索引前插入元素,remove(x)删除第一个匹配的元素,pop(index)删除对应索引元素[未指定-删除最后一个],sort()同类数据排序,reverse()反转
+  字符串str  s="不可变"   方法：find()找子串位置,count()统计字符次数,upper/lower()转换大小写,split('分隔符')按分隔符分割成列表,strip()去除两端空白或指定字符,replace('子串1','子串2')替换子串,startswith/endswith()是否以子串开头/结尾
+  元组tuple  s=(存放多类、不可修改)  count()统计元素数量,index()找元素位置  定义：s=()/(100,)[单个元素加',']
+  
+Day 3:
+  集合set  s={无序(不可用索引)，不重复，可修改}  定义:set()   方法:add(x),remove(x),a=s.pop()[随机删除元素并返回],clear()清空,s1.difference(s2)[s1与s2的差集(在s1不在s2)='-'],union()并集[='|'],intersection交集[='&']
+  字典dict s={key:value(key不重复),可修改,无索引}  定义:{}/dict()  方法:(增/改)dict[key]=value;(删)a=dict.pop[key],del dict[key];(查)value--dict[key]/dict.get(key);所有key/value/键值对--dict.keys()/values()/items()
+Day 4:
+  函数: def 函数名(参数):函数体(return 返回值)   """函数说明文档：功能、参数、返回值"""--help(函数名)可以查看文档   不定长参数:*args   匿名函数:num=lambda x,y:x+y
+  保留小数:round(x,num)[num表示保留几位小数]
+  文件读写:   睡眠延时:time.sleep(num单位:秒)
+    打开文件:f=open(name[r'电脑原路径'],mode['r'只读,'w'写入,'a'追加(w和a可以创建新文件)],encoding="UTF-8")  
+    读取文件:f.read([num]读取长度,默认读取全部长度);f.readlines()整个文件按行进行读取，输出列表，一行一元素;readline()一次读取一行，下次读取接在上次读取位置之后;for line in f:得到每行数据
+    写入/追加写入文件:f.write(内容)→f.flush()  追加写入：'\n'换行
+    关闭文件:f.close()[带有flush功能]
+    打开文件后自动关闭: with open(name,mode,encoding) as f: 文件操作
+  异常捕获: try:可能异常的代码 except [error名称,多个(eroor1,error2)] [as e]:触发异常之后代码 [else:没有异常时的代码] [finally:有无异常都执行的代码] [Exception表示全部异常]
+Day 5:
+  类: class 类名:  def __init__/方法名(self,形参列表):self.属性名=参数值  ;c=类名()  c.方法名()
+  大语言模型(LLM):
+    部署:本地/官方开放API(Application Programming Interface应用程序编程接口)/云服务平台
+      本地部署:Ollama软件(ollama run 模型名称[在ollama的models去搜索])     API--API Key
+  网络:IP地址定位设备(一般IPv4,32位二进制),127.0.0.1本机IP地址(localhost)；domain name域名--DNS域名解析服务器；port端口号0-65535,标识运行程序[http协议默认端口80，https协议默认端443]
+  网络模型:OSI七层模型(应用-表示-会话-传输-网络-数据链路-物理),TCP/IP四层模型(应用层HTTP,FTP,SMTP-传输层UDP,TCP-网络层IP-网络接口层)
+  HTTP-Hyper Text Transfer Protocol超文本传输协议[基于文本,请求-响应,无记忆]  http请求/响应数据格式--见备忘录“http格式”  [浏览器开发程序-F12]
+Day 6:
+  大模型调用--POST(不能用浏览器)--Apifox(API设计、开发、测试一体化平台)--会话需要记忆上下文(滚雪球--将前面对话也全部写上)
+  大模型官方网站--API key创建后--官方文档--python调用
+  提示词工程:大模型角色和能力、任务、拆解问题（思考步骤）、指定风格、输出格式、输入输出示例
+  JSON(JavaScript Object Notation)对象表示方法，类似“字典”  {"key"字符串:value不限类型}
+  PyPI(Python Package Index)python第三方软件包仓库[pip/pip3 install package_name=版本号]
+  配置环境变量:设置-系统-高级系统设置-环境变量[配置完成后重启开发工具]
+  Streamlit:开源python库，用于快速构建交互web网站[pip install streamlit-import streamlit as st-st.方法名()-[终端]streamlit run x.py]
+    [官方文档]标题:st.title(body)-st.header-st.subheader   段落文字:st.write("文字")  插件:st.logo('图片路径')/st.text_input/area('框上方提示词',placeholder='框中提示词')
+  pandas数据分析工具集(底层numpy构建):    设置显示行数pd.set_option('display.min_rows',30)
+    数据读取：pd.DataFrame,Series(index,columns,values,dtypes,size,shape)   df=pd.read_xxx(文件类型)('文件路径',限制读取列usecols=[])  df.to_csv('文件路径',index=False)
+    数据查看：df.head(n)前几行数据/tail(n)末尾几行数据/describe()数值统计/info()数据信息/shape/columns  数据选择：df['col_name1','col_name2']/df.iloc[start:end:step不含end]按行号选择行(loc按照索引选择行)
+    数据过滤：df[df['col_name'>10]]/df[df['col_name'].isin(['choice1','choice2'])]/df[df['col_name'].between(num1,num2)]/&与/|或
+    数据清洗(缺失值、异常值、重复值、统一数据格式)：
+      缺失值：df.isnull().info()查看缺失/dropna()删除缺失值所在行[axis=1删除所在列]/fillna('--')填充缺失值/ffill()用上一行填充缺失值[bfill用下一行]
+      重复值：df.duplicated()查看所有值都重复的[重复为True]/duplicated(subset=['col_name'])查看选定列是否重复/drop_duplicates(subset=['col_name'],keep='first'/'last'/False)删除重复行(保留第一行/最后一行/都不保留)
+      异常值：df[条件式:df[]<0]查看异常值/df.drop(df[df[]<0].index)删除异常值/abs
+      数据格式：df.replace/df.str.replace
+    数据排序：df.sort_values('col_name'/['col_name1','col_name2'],ascending=True升序/False降序/[True,True])
+    数据分组：df.groupby('分组特征')['销售额'].sum()/count()/max()/min()/mean()/agg(['sum','count'……])/agg({'销售总额':'sum',……})
+Day 7: 
+streamlit页面布局：st.set_page_config(page_title=''网页上名称,page_icon=''[emoji百宝箱],layout='wide/center',initial_sidebar_state='enpanded/hide',menu_items={}菜单快捷选项)
+    类似ai界面对话窗口:prompt=st.chat_input("提示词")，展示消息st.chat_message('user/assistant').write(prompt)     消息不覆盖，实现滚动(内存，刷新后无):st.session_state.name保存之前状态，在每次重置后保留显示
+    AI对话记忆能力:(滚雪球)直接使用*st.session_state.name[解包]  流式输出:stream=True,并且原先输出不适用(response.choices[0].message.content),
+改为遍历：[流式输出](占位)response_message=st.empty() [流式接收]full_response=''  for chunk in response:  if chunk.choices[0].delta.content is not None: content = chunk.choices[0].delta.content  full_response+=content response_message.chat_message('assistant').write(full_response)
+    侧边栏:st.sidebar.[element_name]/with st.sidebar: st.element_name
+
+json文件(import json)：写入(序列化)son.dump(obj,f,ensure_ascii=False[保留中文],indent=2[缩进,格式化])[dict→json],读取(反序列化)json.load()[json→dict]
+获取当前时间：from datetime import datetime, now= datetime.now().strftime格式化("%Y-%m-%d &H:%M:%S")
+创建文件夹：if not os.path.exists('sessions'): os.mkdir('sessions')
+    会话:
+      新建会话--保存当前会话，创建新会话并保存[永久保存至磁盘]--保存:伴侣名字nick_name、性格nature、会话信息messages、会话名字current_session[json格式]
+      os.listdir()列表输出文件夹内文件, 并列按键：col1,col2=st.columns(x平均分为x列/[x,y]两列占比为x:y)  同样label组件无法重复创建--+key=f'delete_{session}'
+      按键高亮：+type='primary'/'secondary'/'tertiary'     三元表达式：表达式1 if 条件 else 表达式2
+Day 8:
+  爬虫：网络机器人，按照规则自动浏览并抓取网络数据的程序或脚本  （合规性）robots协议[robots.txt]（哪些页面不可以抓取）  发送HTTP请求[requests库]-解析结果提取数据-数据清洗（标准化）-数据存储    
+  浏览器的url发送请求--response=requests.get(url)    超文本：除了文字，还可以定义图片、音频、视频等内容  F12网页开发者模式  CSV(Comma-Separated Values逗号分隔值),存储表格数据,可直接用excel打开[系统默认中文编码，cmd-chcp-936-GBK/ANSI]
+  前端网页结构：HTML+CSS+JS(JavaScript)   标记语言：<>开始标签 </>结束标签 <a key='value'表示标签属性>  HTML(HyperTextMarkupLanguage)超文本标记语言,<h1>一级标题</h1>,负责网页结构(页面元素和内容)  CSS(CascadingStyleSheets)层叠样式表,负责网页表现(外观、位置、颜色大小)<style>  JS负责网页行为(交互效果)<script>
+  网页解析：从标签中提取数据--lxml库(HTML/XML解析库,支持基于Xpath语法来解析和获取数据)[from lxml import html]  doc=html.fromstring()解析html为文档 list=doc.xpath('//x/y[1]/text()')输出为列表（./当前节点，[last()]选择最后一个元素，[@attr]有该属性元素，*任何元素）
+  python写csv文件(字典)：import csv  with open('w',newline=''控制换行) as f: writer=csv.DictWriter(f,[,,]) writer.writeheader()写入表头 writer.writerow({'':'',})   读：reader=csv.DictReader()
+Day 9:
+  访问国外网站，担心延迟--+timeout=60  列表中多元素输出以','分隔--','.join(list)
+  正则表达式(Regular Expression)  import re--re.match(r'',s).group()从开头匹配(返回match对象)，re.search(r'',s).group()从任意位置搜索第一个匹配(返回match对象)，re.findall(r'',s)从任意位置搜索所有匹配(返回list)  符号语法见备忘录“正则表达式语法”
+  数据分析：数据收集-数据清洗(pandas)-数据分析-数据可视化(matplotlib.pyplot)  Jupyter Notebook(交互环境,独立运行每一小块，运行结果保存)
+  matplotlib.pyplot(plt):  plt.figure(figsize=(10,5))设置画布大小  plt.plot(x,y,label='')创建画布(多折线图，多个plot) 最后要有：plt.show() plt.title(''展示中文代码,fontsize=字体大小)标题  plt.xlabel/ylabel()x/y轴标题  plt.xticks()x轴刻度  plt.grid('linestyle线条样式','alpha透明度')网格线  plt.legend(loc='位置',ncol=列数,位置bbox_to_anchor=(x方向,y方向))图例
+  子图:figure画布对象,axes索引=plt.subplots(nrows=1行数,ncols=2列数,figsize=(20,6)画布大小,dpi=100分辨率)  整个标题：figure.suptitle()   [axes1:Axes=axes[0]]表示axes1属于Axes类  axes1.set_title/set_xlabel/grid/legend   柱状图axes[0].bar(x,y,color='',width=)  饼状图axes[0].pie(value,labels=[],autopct='1.1f%%')  plt.savefig('')
+  int64整型数字，不支持空值;Int64整型数字，支持空值(dtype)
+Day 10:
+Web应用：
+  面向对象高级（封装、继承、多态）：封装:数据(属性)+函数(方法)捆绑成一个独立的单元(类),隐藏内部实现细节,只对外暴露必要的功能(方法). [约定内部调用]私有属性/方法(+下划线):self.__owner=owner def __control(self):  
+  继承:类与类之间关系  class 子类(父类1,父类2)[不含私有] 子类中可重写父类方法（调用父类:父类名.方法()/super().方法()） 类名.mro()查看多继承调用顺序
+  多态:[同一方法不同表现形态]方法参数类型为父类(car:Car)，支持调用任意子类--类型注解并不强制类型，主要关注方法
+  抽象类：只能被继承，不能被实例化的类class Member(ABC)（使用@abstractmethod,强制子类必须实现指定方法）from abc import ABC,abstractmethod(Abstract Base Class)
+  FastAPI:
+  Web:全球广域网,也称万维网(www World Wide Web),能够通过浏览器访问到的网站---前端程序(界面展示HTML+CSS+JS)+服务器程序(业务逻辑处理Django、Flask、FastAPI)+数据库(数据存储和管理)
+  FastAPI(https://fastapi.org.cn):from fastapi import FastAPI  app=FastAPI()  定义功能接口：@app.get('/'访问路径) def root(): return  运行FastAPI服务：1.fastapi dev "xx.py" 2.(服务器)uvicorn xx:app --relolad（或import uvicorn  uvicorn.run(app,host='0.0.0.0'(任何网址),port=8000,access_log=False关闭访问日志)）
+  开发规范:Restful,REST(REpresentational State Transfer表述性状态转换)架构风格的API接口服务--url更简洁，易于维护（/users/1  GET/DELETE/POST/PUT动词描述操作）
+  Fileresponse读取文件；挂载静态文件:from fastapi.staticfiles import StaticFiles  app.mount("/static"寻求路径, StaticFiles(directory="static"现有文件路径), name="static")；json固定label--from pydantic import BaseModel  class Apiresponse(BaseModel)继承重写: code:int message:str data:Any # 任意类型数据
+  记录日志：
+  logging模块：import logging   logging.basicConfig(level=logging.DEBUG/INFO/WARNING/ERROR/FATAL,format='格式')--logging.info('信息')
+  统一异常处理(FastAPI):@app.exception_handler(Exception) def handle_exception(request:Request,exc:Exception):logging.error(f'捕获异常{exc}')  return JSONResponse(content={'code':200,'message':'错误提示语句','data':None})

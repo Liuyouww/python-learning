@@ -1,0 +1,21 @@
+{
+  "current_session": "2026-06-05_22-09-37",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "你好！来猜个字谜吧：“二人不是天”，打一字~"
+    },
+    {
+      "role": "user",
+      "content": "夫"
+    },
+    {
+      "role": "assistant",
+      "content": "太棒了！就是“夫”字！要不要再来一题？"
+    }
+  ]
+}
