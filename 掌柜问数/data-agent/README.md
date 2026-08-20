@@ -12,6 +12,7 @@
 
 ## 技术架构
 | 组件 | 技术选型 |
+|------|------|
 | Agent 框架 | LangGraph |
 | Web 框架 | FastAPI（异步） |
 | 向量数据库 | Qdrant |
